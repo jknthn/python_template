@@ -2,7 +2,8 @@ name: Main repo workflow
 on:
   push:
     branches:
-      - main
+      - master
+      - develop
     paths-ignore:
       - '**.md'
   pull_request:
