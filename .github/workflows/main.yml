@@ -23,6 +23,8 @@ jobs:
           key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }}
       - name: Setup pipenv
         run: pip install pipenv
+      - name: Instal dependencies
+        run: pipenv install --dev
       - name: Black
         run: make check-black
       - name: Flake8
@@ -44,5 +46,7 @@ jobs:
           key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-pipenv-${{ hashFiles('Pipfile.lock') }}
       - name: Setup pipenv
         run: pip install pipenv
+      - name: Instal dependencies
+        run: pipenv install --dev
       - name: Tests
         run: make run-tests-coverage
